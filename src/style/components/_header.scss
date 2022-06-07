@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 36px;
+  border-bottom: 1px solid rgb(230, 221, 221);
+  &__logo {
+    display: flex;
+    align-items: center;
+    img {
+      width: $font-size-h1;
+      height: $font-size-h1;
+      display: block;
+      margin-right: 18px;
+    }
+    &-title {
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    .price-block {
+      display: flex;
+      align-items: center;
+      padding-right: $font-size-h1;
+      .header__actions-price {
+        padding-left: 8px;
+      }
+    }
+  }
+}

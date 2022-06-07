@@ -1,0 +1,18 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 28rem;
+  cursor: pointer;
+  &__img {
+  }
+  &__body {
+    .product-card__title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .product-card__price {
+    }
+  }
+}
