@@ -4,9 +4,11 @@ import { IoMdAdd } from 'react-icons/io';
 import { MdFavoriteBorder } from 'react-icons/md';
 import { MdFavorite } from 'react-icons/md';
 
-// import card from '../assets/img/sneakers/air-force.jpg';
-
 function Card({ img, brand, shoeType, title, price, id }) {
+  const buttonNotification = () => {
+    alert(`Sneakers added to cart ${brand} ${title}`);
+  };
+
   return (
     <div className='product-card' key={id}>
       <MdFavoriteBorder size={21} className='favorite-icon' />
@@ -21,7 +23,7 @@ function Card({ img, brand, shoeType, title, price, id }) {
         </div>
         <div className='product-card__price'>
           <span>{price} p.</span>
-          <button className='btn-border'>
+          <button className='btn-border' onClick={buttonNotification}>
             <IoMdAdd size={15} className='btn-icon' />
           </button>
         </div>

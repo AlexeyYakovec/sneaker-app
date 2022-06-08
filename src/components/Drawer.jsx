@@ -3,7 +3,7 @@ import CartItem from './CartItem';
 
 function Drawer() {
   return (
-    <div className='overlay'>
+    <div className='overlay' style={{ display: 'none' }}>
       <div className='drawer'>
         <h2>Shopping</h2>
         <div className='cardItems'>
