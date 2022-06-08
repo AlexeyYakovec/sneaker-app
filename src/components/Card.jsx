@@ -4,22 +4,23 @@ import { IoMdAdd } from 'react-icons/io';
 import { MdFavoriteBorder } from 'react-icons/md';
 import { MdFavorite } from 'react-icons/md';
 
-import sneaker from '../assets/img/sneakers/air-force.jpg';
+// import card from '../assets/img/sneakers/air-force.jpg';
 
-function Card() {
+function Card({ img, brand, shoeType, title, price, id }) {
   return (
-    <div className='product-card'>
+    <div className='product-card' key={id}>
       <MdFavoriteBorder size={21} className='favorite-icon' />
       {/* <MdFavorite size={21} className='favorite-icon' /> */}
-      <img src={sneaker} alt='' className='product-card__img' />
+      {}
+      <img src={img} alt='' className='product-card__img' />
       <div className='product-card__body'>
-        'Nike'
+        {brand}
         <div className='product-card__title'>
-          <span>Sneaker</span>
-          <span>Air Force 1 High Crater</span>
+          <span>{shoeType}</span>
+          <span>{title}</span>
         </div>
         <div className='product-card__price'>
-          <span>17005 p.</span>
+          <span>{price} p.</span>
           <button className='btn-border'>
             <IoMdAdd size={15} className='btn-icon' />
           </button>

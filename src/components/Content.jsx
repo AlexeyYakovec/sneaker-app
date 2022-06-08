@@ -3,44 +3,50 @@ import Card from './Card';
 
 const data = [
   {
-    img: './assets/img/sneakers/air-force.jpg',
+    id: 1,
+    img: './sneakers/air-force.jpg',
     brand: 'Nike',
-    shoeType: 'sneaker',
+    shoeType: 'Sneaker',
     title: 'Air Force 1 High Crater',
     price: '17 490',
   },
   {
-    img: './assets/img/sneakers/air-mada.jpg',
+    id: 2,
+    img: './sneakers/air-mada.jpg',
     brand: 'Nike',
-    shoeType: 'sneaker',
+    shoeType: 'Sneaker',
     title: 'ACG Air Mada',
     price: '13 690',
   },
   {
-    img: './assets/img/sneakers/air-mowabb.jpg',
+    id: 3,
+    img: './sneakers/air-mowabb.jpg',
     brand: 'Nike',
-    shoeType: 'sneaker',
+    shoeType: 'Sneaker',
     title: 'ACG Air Mowabb',
     price: '15 690',
   },
   {
-    img: './assets/img/sneakers/jogger.jpg',
+    id: 4,
+    img: './sneakers/jogger.jpg',
     brand: 'Adidas original',
-    shoeType: 'sneaker',
+    shoeType: 'Sneaker',
     title: 'Nite Jogger Winterized',
     price: '14 990',
   },
   {
-    img: './assets/img/sneakers/ozrah.jpg',
+    id: 5,
+    img: './sneakers/ozrah.jpg',
     brand: 'Adidas original',
-    shoeType: 'sneaker',
+    shoeType: 'Sneaker',
     title: 'Ozrah',
     price: '12 790',
   },
   {
-    img: './assets/img/sneakers/ozzelia.jpg',
+    id: 6,
+    img: './sneakers/ozzelia.jpg',
     brand: 'Adidas original',
-    shoeType: 'sneaker',
+    shoeType: 'Sneaker',
     title: 'Ozelia',
     price: '10 490',
   },
@@ -55,12 +61,16 @@ function Content() {
       </div>
 
       <div className='product-contenct'>
-        {data.map(({}) => (
-          <Card />
+        {data.map(({ id, img, brand, shoeType, title, price }) => (
+          <Card
+            key={id}
+            img={img}
+            brand={brand}
+            shoeType={shoeType}
+            title={title}
+            price={price}
+          />
         ))}
-
-        <Card />
-        <Card />
       </div>
     </div>
   );
