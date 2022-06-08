@@ -1,5 +1,25 @@
 .content {
   padding: 36px;
+  &-header {
+    margin-bottom: 48px;
+    h2 {
+    }
+    input {
+      border: none;
+      outline: none;
+      border: 1px solid rgb(214, 214, 214);
+      width: 200px;
+      padding: 8px;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      &::placeholder {
+        opacity: 0.8;
+      }
+    }
+  }
   .product-contenct {
     display: grid;
     grid-template-rows: repeat(3, 1fr);

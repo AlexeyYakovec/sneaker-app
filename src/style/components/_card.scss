@@ -4,6 +4,13 @@
   align-items: center;
   max-width: 28rem;
   cursor: pointer;
+  position: relative;
+  .favorite-icon {
+    position: absolute;
+    top: 60px;
+    left: 15px;
+    color: rgb(255, 162, 162);
+  }
   &__img {
   }
   &__body {

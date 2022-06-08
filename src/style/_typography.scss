@@ -38,3 +38,13 @@ p {
   display: block;
   cursor: pointer;
 }
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.opacity {
+  opacity: 0.4;
+}
