@@ -3,7 +3,7 @@ import CartItem from './CartItem';
 
 import { AiOutlineClose } from 'react-icons/ai';
 
-function Drawer({ onClose, items = [] }) {
+function Drawer({ onClose, items }) {
   return (
     <div className='overlay'>
       <div className='drawer'>
