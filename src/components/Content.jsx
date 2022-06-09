@@ -1,10 +1,13 @@
 import React from 'react';
 import Card from './Card';
 
-function Content({ items }) {
+function Content({ items, setCartItems, cartItems }) {
   const onAddToCart = (obj) => {
-    console.log(obj, 'onAddToCart');
+    // console.log(obj, 'onAddToCart');
+    setCartItems((prev) => [...prev, obj]);
   };
+
+  console.log(cartItems);
 
   return (
     <div className='content'>

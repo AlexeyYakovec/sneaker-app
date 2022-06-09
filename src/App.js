@@ -26,7 +26,11 @@ function App() {
           <Drawer items={cartItems} onClose={() => setCardOpen(false)} />
         ) : null}
         <Header onClickCart={() => setCardOpen(true)} />
-        <Content items={items} />
+        <Content
+          items={items}
+          setCartItems={setCartItems}
+          cartItems={cartItems}
+        />
       </div>
     </div>
   );
