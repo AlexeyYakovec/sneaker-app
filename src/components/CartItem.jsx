@@ -4,22 +4,22 @@ import { AiOutlineDelete } from 'react-icons/ai';
 
 import sneaker from '../assets/img/sneakers/air-force.jpg';
 
-function CartItem() {
+function CartItem({ id, img, brand, title, price }) {
   return (
-    <div className='cartItem'>
-      <img src={sneaker} alt='' />
+    <div className='cartItem' key={id}>
+      <img src={img} alt='' />
       <div className='cartItem-desc'>
         <div className='cartItem-desc-name'>
-          <span>'Nike'</span>
-          <span className='opacity'>Air Force 1 High Crater</span>
+          <span>{brand}</span>
+          <span className='opacity'>{title}</span>
         </div>
         <div className='cartItem-desc-price'>
-          <span>17005 p.</span>
+          <p>{price} p.</p>
         </div>
       </div>
       <AiOutlineDelete
         size={24}
-        style={{ cursor: 'pointer' }}
+        style={{ cursor: 'pointer', marginRight: '12px' }}
         className='cartItem-delete'
       />
     </div>

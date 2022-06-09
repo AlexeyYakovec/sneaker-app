@@ -22,7 +22,8 @@
     .price-block {
       display: flex;
       align-items: center;
-      padding-right: $font-size-h1;
+      margin-right: $font-size-h1;
+      cursor: pointer;
       .header__actions-price {
         padding-left: 8px;
       }

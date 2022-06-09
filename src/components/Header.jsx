@@ -4,7 +4,7 @@ import logo from '../assets/img/high-sneaker-svgrepo-com.svg';
 
 import { AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai';
 
-function Header() {
+function Header({ onClickCart, onCloseCard }) {
   return (
     <div className='header'>
       <div className='header__logo'>
@@ -18,7 +18,7 @@ function Header() {
       </div>
 
       <div className='header__actions'>
-        <div className='price-block'>
+        <div className='price-block' onClick={onClickCart}>
           <AiOutlineShoppingCart size={28} className='icon' />
           <p className='header__actions-price'>1205 p.</p>
         </div>

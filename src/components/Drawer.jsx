@@ -1,14 +1,29 @@
 import React from 'react';
 import CartItem from './CartItem';
 
-function Drawer() {
+import { AiOutlineClose } from 'react-icons/ai';
+
+function Drawer({ onClose, items = [] }) {
   return (
-    <div className='overlay' style={{ display: 'none' }}>
+    <div className='overlay'>
       <div className='drawer'>
         <h2>Shopping</h2>
+        <AiOutlineClose
+          size={24}
+          style={{ cursor: 'pointer' }}
+          className='close'
+          onClick={onClose}
+        />
         <div className='cardItems'>
-          <CartItem />
-          <CartItem />
+          {items.map(({ id, img, brand, title, price }) => (
+            <CartItem
+              key={id}
+              img={img}
+              brand={brand}
+              title={title}
+              price={price}
+            />
+          ))}
         </div>
 
         <div className='drawer-footer'>

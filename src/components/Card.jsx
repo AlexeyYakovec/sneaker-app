@@ -1,19 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { IoMdAdd } from 'react-icons/io';
 import { MdFavoriteBorder } from 'react-icons/md';
 import { MdFavorite } from 'react-icons/md';
 
-function Card({ img, brand, shoeType, title, price, id }) {
+function Card({ img, brand, shoeType, title, price, id, onFavorite }) {
+  const [isFavorite, setIsFavorite] = useState(true);
+
+  const handleFavorite = () => {
+    setIsFavorite(!isFavorite);
+  };
+
   const buttonNotification = () => {
     alert(`Sneakers added to cart ${brand} ${title}`);
   };
 
   return (
     <div className='product-card' key={id}>
-      <MdFavoriteBorder size={21} className='favorite-icon' />
-      {/* <MdFavorite size={21} className='favorite-icon' /> */}
-      {}
+      {isFavorite ? (
+        <MdFavoriteBorder
+          size={21}
+          className='favorite-icon'
+          onClick={handleFavorite}
+        />
+      ) : (
+        <MdFavorite
+          size={21}
+          className='favorite-icon'
+          onClick={handleFavorite}
+        />
+      )}
       <img src={img} alt='' className='product-card__img' />
       <div className='product-card__body'>
         {brand}
