@@ -4,15 +4,15 @@ import { IoMdAdd } from 'react-icons/io';
 import { MdFavoriteBorder } from 'react-icons/md';
 import { MdFavorite } from 'react-icons/md';
 
-function Card({ img, brand, shoeType, title, price, id, onFavorite }) {
+function Card({ img, brand, shoeType, title, price, id, onFavorite, onPlus }) {
   const [isFavorite, setIsFavorite] = useState(true);
 
   const handleFavorite = () => {
     setIsFavorite(!isFavorite);
   };
 
-  const buttonNotification = () => {
-    alert(`Sneakers added to cart ${brand} ${title}`);
+  const onClickPlus = () => {
+    onPlus({ shoeType, title, img, price });
   };
 
   return (
@@ -39,7 +39,7 @@ function Card({ img, brand, shoeType, title, price, id, onFavorite }) {
         </div>
         <div className='product-card__price'>
           <span>{price} p.</span>
-          <button className='btn-border' onClick={buttonNotification}>
+          <button className='btn-border' onClick={onClickPlus}>
             <IoMdAdd size={15} className='btn-icon' />
           </button>
         </div>

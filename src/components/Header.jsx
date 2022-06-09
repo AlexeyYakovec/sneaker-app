@@ -4,7 +4,7 @@ import logo from '../assets/img/high-sneaker-svgrepo-com.svg';
 
 import { AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai';
 
-function Header({ onClickCart, onCloseCard }) {
+function Header({ onClickCart }) {
   return (
     <div className='header'>
       <div className='header__logo'>

@@ -2,8 +2,6 @@ import React from 'react';
 
 import { AiOutlineDelete } from 'react-icons/ai';
 
-import sneaker from '../assets/img/sneakers/air-force.jpg';
-
 function CartItem({ id, img, brand, title, price }) {
   return (
     <div className='cartItem' key={id}>

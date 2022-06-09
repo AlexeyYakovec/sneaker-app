@@ -2,6 +2,10 @@ import React from 'react';
 import Card from './Card';
 
 function Content({ items }) {
+  const onAddToCart = (obj) => {
+    console.log(obj, 'onAddToCart');
+  };
+
   return (
     <div className='content'>
       <div className='content-header flex'>
@@ -10,7 +14,7 @@ function Content({ items }) {
       </div>
 
       <div className='product-contenct'>
-        {items.map(({ id, img, brand, shoeType, title, price }) => (
+        {items.map(({ img, brand, shoeType, title, price, id }) => (
           <Card
             key={id}
             img={img}
@@ -19,6 +23,7 @@ function Content({ items }) {
             title={title}
             price={price}
             onFavorite={() => alert('on favorite')}
+            onPlus={(obj) => onAddToCart(obj)}
           />
         ))}
       </div>

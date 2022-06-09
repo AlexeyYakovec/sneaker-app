@@ -19,12 +19,11 @@ function App() {
       });
   }, []);
 
-  console.log(items);
   return (
     <div className='App'>
       <div className='container'>
         {cartOpen ? (
-          <Drawer items={items} onClose={() => setCardOpen(false)} />
+          <Drawer items={cartItems} onClose={() => setCardOpen(false)} />
         ) : null}
         <Header onClickCart={() => setCardOpen(true)} />
         <Content items={items} />
