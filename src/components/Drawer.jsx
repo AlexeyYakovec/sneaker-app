@@ -4,9 +4,6 @@ import React from 'react';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { AiOutlineClose } from 'react-icons/ai';
 
-//img
-import empty from 'public/sneakers/img/empty-cart.jpg';
-
 function Drawer({ onClose, onRemove, items = [] }) {
   return (
     <div className='overlay'>
@@ -18,8 +15,12 @@ function Drawer({ onClose, onRemove, items = [] }) {
           className='close'
           onClick={onClose}
         />
+
+        {/* Empty Card */}
         <div className='cardEmpty'>
-          <img src={empty} alt='' />
+          <img src='./sneakers/img/empty-cart.jpg' alt='' />
+          <h2>Basket Blowing</h2>
+          <p>Add at least one pair of shoes</p>
         </div>
 
         <div className='cardItems'>
