@@ -50,6 +50,10 @@ function App() {
   const onRemoveItem = (id) => {
     // axios.delete(`https://62a1c3cacd2e8da9b0f9dd01.mockapi.io/cart/${id}`);
     setCartItems((prev) => prev.filter((item) => item.id !== id));
+<<<<<<< HEAD
+=======
+    console.log(id);
+>>>>>>> sneaker-app-branch2
   };
   return (
     <div className='App'>
