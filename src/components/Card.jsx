@@ -4,7 +4,7 @@ import { IoMdAdd } from 'react-icons/io';
 import { MdFavoriteBorder } from 'react-icons/md';
 import { MdFavorite } from 'react-icons/md';
 
-function Card({ img, brand, shoeType, title, price, id, onFavorite, onPlus }) {
+function Card({ img, brand, shoeType, title, price, onPlus }) {
   const [isFavorite, setIsFavorite] = useState(true);
 
   const handleFavorite = () => {
@@ -12,11 +12,11 @@ function Card({ img, brand, shoeType, title, price, id, onFavorite, onPlus }) {
   };
 
   const onClickPlus = () => {
-    onPlus({ shoeType, title, img, price });
+    onPlus({ shoeType, title, img, price, brand });
   };
 
   return (
-    <div className='product-card' key={id}>
+    <div className='product-card' id={title.toLowerCase().replace(/ /g, '-')}>
       {isFavorite ? (
         <MdFavoriteBorder
           size={21}

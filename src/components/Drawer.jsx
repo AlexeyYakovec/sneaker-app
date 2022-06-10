@@ -1,9 +1,10 @@
 import React from 'react';
-import CartItem from './CartItem';
 
+//icons
+import { AiOutlineDelete } from 'react-icons/ai';
 import { AiOutlineClose } from 'react-icons/ai';
 
-function Drawer({ onClose, items }) {
+function Drawer({ onClose, onRemove, items = [] }) {
   return (
     <div className='overlay'>
       <div className='drawer'>
@@ -15,14 +16,25 @@ function Drawer({ onClose, items }) {
           onClick={onClose}
         />
         <div className='cardItems'>
-          {items.map(({ id, img, brand, title, price }) => (
-            <CartItem
-              key={id}
-              img={img}
-              brand={brand}
-              title={title}
-              price={price}
-            />
+          {items.map((obj) => (
+            <div key={obj.id} className='cartItem'>
+              <img src={obj.img} alt='' />
+              <div className='cartItem-desc'>
+                <div className='cartItem-desc-name'>
+                  <span>{obj.brand}</span>
+                  <span className='opacity'>{obj.title}</span>
+                </div>
+                <div className='cartItem-desc-price'>
+                  <p>{obj.price} p.</p>
+                </div>
+              </div>
+              <AiOutlineDelete
+                onClick={() => onRemove(obj.id)}
+                size={24}
+                style={{ cursor: 'pointer', marginRight: '12px' }}
+                className='cartItem-delete'
+              />
+            </div>
           ))}
         </div>
 
