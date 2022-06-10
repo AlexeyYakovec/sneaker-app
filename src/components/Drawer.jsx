@@ -4,6 +4,9 @@ import React from 'react';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { AiOutlineClose } from 'react-icons/ai';
 
+//img
+import empty from 'public/sneakers/img/empty-cart.jpg';
+
 function Drawer({ onClose, onRemove, items = [] }) {
   return (
     <div className='overlay'>
@@ -15,6 +18,10 @@ function Drawer({ onClose, onRemove, items = [] }) {
           className='close'
           onClick={onClose}
         />
+        <div className='cardEmpty'>
+          <img src={empty} alt='' />
+        </div>
+
         <div className='cardItems'>
           {items.map((obj) => (
             <div key={obj.id} className='cartItem'>

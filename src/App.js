@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 //libraries
-import uuid from 'react-uuid';
 import axios from 'axios';
 
 // components
