@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-import Content from './components/Content';
 import Drawer from './components/Drawer';
 import Header from './components/Header';
+
+import Card from './components/Card';
 
 function App() {
   const [items, setItems] = useState([]);
@@ -19,6 +20,11 @@ function App() {
       });
   }, []);
 
+  const onAddToCart = (obj) => {
+    // console.log(obj, 'onAddToCart');
+    setCartItems((prev) => [...prev, obj]);
+  };
+
   return (
     <div className='App'>
       <div className='container'>
@@ -26,11 +32,26 @@ function App() {
           <Drawer items={cartItems} onClose={() => setCardOpen(false)} />
         ) : null}
         <Header onClickCart={() => setCardOpen(true)} />
-        <Content
-          items={items}
-          setCartItems={setCartItems}
-          cartItems={cartItems}
-        />
+        <div className='content'>
+          <div className='content-header flex'>
+            <h2>sneaker list</h2>
+            <input placeholder='enter sneakers...' type='search' />
+          </div>
+          <div className='product-contenct'>
+            {items.map(({ img, brand, shoeType, title, price, id }) => (
+              <Card
+                key={id}
+                img={img}
+                brand={brand}
+                shoeType={shoeType}
+                title={title}
+                price={price}
+                onFavorite={() => alert('on favorite')}
+                onPlus={(obj) => onAddToCart(obj)}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
