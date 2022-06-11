@@ -3,6 +3,7 @@ import React from 'react';
 import logo from '../assets/img/high-sneaker-svgrepo-com.svg';
 
 import { AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai';
+import { BsFillBookmarkHeartFill } from 'react-icons/bs';
 
 function Header({ onClickCart }) {
   return (
@@ -22,6 +23,7 @@ function Header({ onClickCart }) {
           <AiOutlineShoppingCart size={28} className='icon' />
           <p className='header__actions-price'>1205 p.</p>
         </div>
+        <BsFillBookmarkHeartFill size={28} className='bookmarks icon' />
         <AiOutlineUser size={28} className='icon' />
       </div>
     </div>

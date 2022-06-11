@@ -4,11 +4,12 @@ import { IoMdAdd } from 'react-icons/io';
 import { MdFavoriteBorder } from 'react-icons/md';
 import { MdFavorite } from 'react-icons/md';
 
-function Card({ img, brand, shoeType, title, price, onPlus }) {
+function Card({ img, brand, shoeType, title, price, onPlus, onFavorite }) {
   const [isFavorite, setIsFavorite] = useState(true);
 
   const handleFavorite = () => {
     setIsFavorite(!isFavorite);
+    onFavorite({ shoeType, title, img, price, brand });
   };
 
   const onClickPlus = () => {
