@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import logo from '../assets/img/high-sneaker-svgrepo-com.svg';
 
@@ -8,22 +9,25 @@ import { BsFillBookmarkHeartFill } from 'react-icons/bs';
 function Header({ onClickCart }) {
   return (
     <div className='header'>
-      <div className='header__logo'>
-        <a href='/'>
+      <Link to='/'>
+        <div className='header__logo'>
           <img src={logo} alt='' />
-        </a>
-        <div className='header__logo-title'>
-          <h3>React sneakers</h3>
-          <p>sneaker store</p>
+          <div className='header__logo-title'>
+            <h3>React sneakers</h3>
+            <p>sneaker store</p>
+          </div>
         </div>
-      </div>
+      </Link>
 
       <div className='header__actions'>
         <div className='price-block' onClick={onClickCart}>
           <AiOutlineShoppingCart size={28} className='icon' />
           <p className='header__actions-price'>1205 p.</p>
         </div>
-        <BsFillBookmarkHeartFill size={28} className='bookmarks icon' />
+        <Link to='/favorites'>
+          <BsFillBookmarkHeartFill size={28} className='bookmarks icon' />
+        </Link>
+
         <AiOutlineUser size={28} className='icon' />
       </div>
     </div>
