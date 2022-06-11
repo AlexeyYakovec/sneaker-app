@@ -15,35 +15,38 @@ function Drawer({ onClose, onRemove, items = [] }) {
           className='close'
           onClick={onClose}
         />
-
-        {/* Empty Card */}
-        <div className='cardEmpty'>
-          <img src='./sneakers/img/empty-cart.jpg' alt='' />
-          <h2>Basket Blowing</h2>
-          <p>Add at least one pair of shoes</p>
-        </div>
-
         <div className='cardItems'>
-          {items.map((obj) => (
-            <div key={obj.id} className='cartItem'>
-              <img src={obj.img} alt='' />
-              <div className='cartItem-desc'>
-                <div className='cartItem-desc-name'>
-                  <span>{obj.brand}</span>
-                  <span className='opacity'>{obj.title}</span>
+          {items.length > 0 ? (
+            <div>
+              {items.map((obj) => (
+                <div key={obj.id} className='cartItem'>
+                  <img src={obj.img} alt='' />
+                  <div className='cartItem-desc'>
+                    <div className='cartItem-desc-name'>
+                      <span>{obj.brand}</span>
+                      <span className='opacity'>{obj.title}</span>
+                    </div>
+                    <div className='cartItem-desc-price'>
+                      <p>{obj.price} p.</p>
+                    </div>
+                  </div>
+                  <AiOutlineDelete
+                    onClick={() => onRemove(obj.id)}
+                    size={24}
+                    style={{ cursor: 'pointer', marginRight: '12px' }}
+                    className='cartItem-delete'
+                  />
                 </div>
-                <div className='cartItem-desc-price'>
-                  <p>{obj.price} p.</p>
-                </div>
-              </div>
-              <AiOutlineDelete
-                onClick={() => onRemove(obj.id)}
-                size={24}
-                style={{ cursor: 'pointer', marginRight: '12px' }}
-                className='cartItem-delete'
-              />
+              ))}
             </div>
-          ))}
+          ) : (
+            <div className='cardEmpty'>
+              <img src='./sneakers/img/empty-cart.jpg' alt='' />
+              <h2>Basket Blowing</h2>
+              <p>Add at least one pair of shoes</p>
+              <button onClick={onClose}>move back</button>
+            </div>
+          )}
         </div>
 
         <div className='drawer-footer'>

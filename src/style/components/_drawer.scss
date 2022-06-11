@@ -36,7 +36,7 @@
   .cardItems {
     flex: 1 0 auto;
     overflow: auto;
-    height: 65%;
+    height: 72%;
 
     .cartItem {
       display: flex;
@@ -46,8 +46,8 @@
       &-delete {
       }
       img {
-        width: 60px;
-        height: 60px;
+        width: 78px;
+        height: 78px;
       }
       &-desc {
         margin-left: 12px;

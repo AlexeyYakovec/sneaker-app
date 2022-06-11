@@ -15,18 +15,10 @@ function App() {
   const [cartOpen, setCardOpen] = useState(false);
 
   useEffect(() => {
-    // fetch('https://62a1c3cacd2e8da9b0f9dd01.mockapi.io/items')
-    //   .then((response) => {
-    //     return response.json();
-    //   })
-    //   .then((json) => {
-    //     setItems(json);
-    //   });
-
     axios
       .get('https://62a1c3cacd2e8da9b0f9dd01.mockapi.io/items')
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setItems(res.data);
       });
     axios
@@ -43,13 +35,14 @@ function App() {
   };
 
   const onChangeSearchInput = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setSearchValue(event.target.value);
   };
 
   const onRemoveItem = (id) => {
     // axios.delete(`https://62a1c3cacd2e8da9b0f9dd01.mockapi.io/cart/${id}`);
     setCartItems((prev) => prev.filter((item) => item.id !== id));
+    console.log(id);
   };
   return (
     <div className='App'>
@@ -78,7 +71,7 @@ function App() {
           <div className='product-contenct'>
             {items
               .filter((item) =>
-                item.title.toLowerCase().includes(searchValue.toLowerCase())
+                item.brand.toLowerCase().includes(searchValue.toLowerCase())
               )
               .map(({ img, brand, shoeType, title, price, id }) => (
                 <Card
